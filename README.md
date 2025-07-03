@@ -14,4 +14,15 @@ This demo project shows how to integrate **Soda** for data quality checks into a
 🛠 Status: In progress (initial setup complete)
 
 📁 Project structure:
+📁 Project structure:
+
+├── dags/
+│   └── soda_scan_dag.py         # Airflow DAG to run Soda scan
+├── soda/
+│   ├── config.yml               # Soda CLI configuration
+│   ├── scan_checks.yml          # Data quality checks
+│   └── README.md                # Description of Soda setup
+├── docker-compose-LocalExecutor.yml  # Docker setup for Airflow + Postgres
+└── README.md                    # Project description and instructions
+
 
