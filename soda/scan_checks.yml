@@ -1,0 +1,5 @@
+checks for dag_run:
+  - row_count > 0
+  - missing_count(dag_id) = 0
+  - missing_count(execution_date) = 0
+  - duplicate_count(run_id) = 0
