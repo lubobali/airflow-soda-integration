@@ -27,45 +27,40 @@ Copy
 ├── docker-compose.yml              # Docker Compose setup for Airflow + Postgres
 └── README.md                      # Project description and instructions
 ⚙️ Setup Instructions
-Clone this repo
-
+Clone the repo
 bash
 Copy
 git clone https://github.com/lubobali/airflow-soda-integration.git
 cd airflow-soda-integration
 Start the Airflow + Postgres stack
-
 bash
 Copy
 docker compose up -d
 Access the Airflow Web UI
 Open your browser and go to:
+
+arduino
+Copy
 http://localhost:8090
+Run the Soda data quality scan DAG
+Find the DAG named soda_scan_example in the Airflow UI.
 
-Trigger the DAG
+Trigger it manually or wait for the scheduled run.
 
-Find the DAG named soda_scan_example in the Airflow UI
-
-Trigger it manually or wait for the scheduled run
-
-Monitor the run
-
-Check the task logs in the Airflow UI
-
-Look for the Soda scan output, which should report passed checks
+Monitor the task logs to see the Soda scan results.
 
 ✅ What Happens
-The DAG executes a BashOperator task that runs the Soda CLI command
+The DAG runs a BashOperator task that executes the Soda CLI command.
 
-Soda connects to the Postgres database
+Soda connects to the Postgres database.
 
-It performs data quality checks defined in scan_checks.yml
+Data quality checks defined in scan_checks.yml are executed.
 
-Results are shown in Airflow task logs
+Results are visible in Airflow task logs.
 
-📖 Additional Notes
-The Postgres service runs with default credentials set in soda/config.yml
+📖 Notes
+Postgres runs with default credentials set in soda/config.yml.
 
-Update the config if your database setup changes
+Update the config if your database setup changes.
 
-Extend scan_checks.yml to add more data quality rules as needed
+Extend scan_checks.yml to add more data quality rules as needed.
