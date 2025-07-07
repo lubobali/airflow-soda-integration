@@ -1,6 +1,8 @@
 services:
   airflow-webserver:
-    image: apache/airflow:2.7.1-python3.8
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
     restart: always
     depends_on:
       - postgres
@@ -25,7 +27,9 @@ services:
       retries: 3
 
   airflow-scheduler:
-    image: apache/airflow:2.7.1-python3.8
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
     restart: always
     depends_on:
       - postgres
@@ -46,7 +50,9 @@ services:
       - POSTGRES_PASSWORD=airflow
       - POSTGRES_DB=airflow
     volumes:
-      - postgres_data:/var/lib/postgresql/data 
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
 
 volumes:
   postgres_data:

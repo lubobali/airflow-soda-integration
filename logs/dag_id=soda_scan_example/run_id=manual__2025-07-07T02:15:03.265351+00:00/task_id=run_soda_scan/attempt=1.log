@@ -1,0 +1,26 @@
+[2025-07-07T02:15:05.411+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-07T02:15:03.265351+00:00 [queued]>
+[2025-07-07T02:15:05.420+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-07T02:15:03.265351+00:00 [queued]>
+[2025-07-07T02:15:05.420+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-07-07T02:15:05.428+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): run_soda_scan> on 2025-07-07 02:15:03.265351+00:00
+[2025-07-07T02:15:05.439+0000] {standard_task_runner.py:57} INFO - Started process 185 to run task
+[2025-07-07T02:15:05.444+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'soda_scan_example', 'run_soda_scan', 'manual__2025-07-07T02:15:03.265351+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/soda_scan_dag.py', '--cfg-path', '/tmp/tmp9gn8mb9i']
+[2025-07-07T02:15:05.447+0000] {standard_task_runner.py:85} INFO - Job 43: Subtask run_soda_scan
+[2025-07-07T02:15:05.459+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-07T02:15:05.482+0000] {task_command.py:415} INFO - Running <TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-07T02:15:03.265351+00:00 [running]> on host 60c6e9dd0464
+[2025-07-07T02:15:05.539+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='soda_scan_example' AIRFLOW_CTX_TASK_ID='run_soda_scan' AIRFLOW_CTX_EXECUTION_DATE='2025-07-07T02:15:03.265351+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-07T02:15:03.265351+00:00'
+[2025-07-07T02:15:05.540+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-07T02:15:05.541+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'export PATH=$PATH:/home/***/.local/bin && /home/***/.local/bin/soda scan -d local_postgres -c /usr/local/soda/config.yml /usr/local/soda/scan_checks.yml']
+[2025-07-07T02:15:05.548+0000] {subprocess.py:86} INFO - Output:
+[2025-07-07T02:15:06.533+0000] {subprocess.py:93} INFO - [02:15:06] Soda Core 3.5.5
+[2025-07-07T02:15:06.621+0000] {subprocess.py:93} INFO - [02:15:06] Scan summary:
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06] 4/4 checks PASSED:
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06]     dag_run in local_postgres
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06]       row_count > 0 [PASSED]
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06]       missing_count(dag_id) = 0 [PASSED]
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06]       missing_count(execution_date) = 0 [PASSED]
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06]       duplicate_count(run_id) = 0 [PASSED]
+[2025-07-07T02:15:06.622+0000] {subprocess.py:93} INFO - [02:15:06] All is good. No failures. No warnings. No errors.
+[2025-07-07T02:15:07.129+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-07-07T02:15:07.160+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=soda_scan_example, task_id=run_soda_scan, execution_date=20250707T021503, start_date=20250707T021505, end_date=20250707T021507
+[2025-07-07T02:15:07.214+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-07-07T02:15:07.229+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

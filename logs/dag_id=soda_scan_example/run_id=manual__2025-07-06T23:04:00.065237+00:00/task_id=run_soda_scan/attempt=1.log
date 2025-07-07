@@ -1,0 +1,24 @@
+[2025-07-06T23:04:01.212+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-06T23:04:00.065237+00:00 [queued]>
+[2025-07-06T23:04:01.217+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-06T23:04:00.065237+00:00 [queued]>
+[2025-07-06T23:04:01.217+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-07-06T23:04:01.225+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): run_soda_scan> on 2025-07-06 23:04:00.065237+00:00
+[2025-07-06T23:04:01.229+0000] {standard_task_runner.py:57} INFO - Started process 175 to run task
+[2025-07-06T23:04:01.231+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'soda_scan_example', 'run_soda_scan', 'manual__2025-07-06T23:04:00.065237+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/soda_scan_dag.py', '--cfg-path', '/tmp/tmp74ww4rq_']
+[2025-07-06T23:04:01.232+0000] {standard_task_runner.py:85} INFO - Job 32: Subtask run_soda_scan
+[2025-07-06T23:04:01.244+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-06T23:04:01.271+0000] {task_command.py:415} INFO - Running <TaskInstance: soda_scan_example.run_soda_scan manual__2025-07-06T23:04:00.065237+00:00 [running]> on host 4010ea07c34f
+[2025-07-06T23:04:01.332+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='soda_scan_example' AIRFLOW_CTX_TASK_ID='run_soda_scan' AIRFLOW_CTX_EXECUTION_DATE='2025-07-06T23:04:00.065237+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-06T23:04:00.065237+00:00'
+[2025-07-06T23:04:01.334+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-06T23:04:01.335+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '/home/***/.local/bin/soda scan -d local_postgres -c /usr/local/soda/config.yml /usr/local/soda/scan_checks.yml']
+[2025-07-06T23:04:01.347+0000] {subprocess.py:86} INFO - Output:
+[2025-07-06T23:04:01.351+0000] {subprocess.py:93} INFO - /bin/bash: line 1: /home/***/.local/bin/soda: No such file or directory
+[2025-07-06T23:04:01.351+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-07-06T23:04:01.359+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-07-06T23:04:01.362+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=soda_scan_example, task_id=run_soda_scan, execution_date=20250706T230400, start_date=20250706T230401, end_date=20250706T230401
+[2025-07-06T23:04:01.370+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 32 for task run_soda_scan (Bash command failed. The command returned a non-zero exit code 127.; 175)
+[2025-07-06T23:04:01.412+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-07-06T23:04:01.424+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
