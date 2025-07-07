@@ -64,3 +64,9 @@ Postgres runs with default credentials set in soda/config.yml.
 Update the config if your database setup changes.
 
 Extend scan_checks.yml to add more data quality rules as needed.
+
+🧠 Requirements
+Docker installed locally
+
+No other dependencies needed — all setup is containerized
+
